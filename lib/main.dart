@@ -1,8 +1,5 @@
-import 'package:basic_one/my_home_page.dart';
 import 'package:basic_one/splash_screen.dart';
 import 'package:flutter/material.dart';
-
-
 
 void main() {
   runApp(const MyApp());
@@ -22,9 +19,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const SplashScreen(),
-      routes: {
-        '/home': (context) =>const MyHomePage()
-      },
+      routes: {'/home': (context) => const SplashScreen()},
     );
   }
 }
