@@ -1,7 +1,6 @@
 import 'package:basic_one/create_account.dart';
 import 'package:basic_one/my_home_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 import 'drawer_page.dart';
 
@@ -19,7 +18,7 @@ class WelcomePage extends StatelessWidget {
             IconButton(
               icon: const Icon(Icons.notifications_active),
               onPressed: () {
-                Scaffold.of(context).openDrawer();
+                // Scaffold.of(context).openDrawer();
               },
             ),
           ],
@@ -32,8 +31,8 @@ class WelcomePage extends StatelessWidget {
             children: [
               //HEADER TEXT
               const Padding(
-                padding: const EdgeInsets.only(left: 5.0),
-                child: const Text(
+                padding: EdgeInsets.only(left: 5.0),
+                child: Text(
                   'Welcome, Jessie.',
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
@@ -49,7 +48,7 @@ class WelcomePage extends StatelessWidget {
 
               // DASHBOARD HERE
               Container(
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   color: authsBackColor,
                   borderRadius: BorderRadius.circular(20),

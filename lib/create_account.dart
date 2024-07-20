@@ -1,4 +1,3 @@
-import 'package:basic_one/login_page.dart';
 import 'package:basic_one/welcome_page.dart';
 import 'package:flutter/material.dart';
 
@@ -59,7 +58,7 @@ class _CreateAccountState extends State<CreateAccount> {
 
                   // FORM FIELDS HERE
                   Padding(
-                    padding: const EdgeInsets.only(top: 98.0),
+                    padding: const EdgeInsets.only(top: 48.0),
                     child: Form(
                       key: _formKey,
                       child: Column(
@@ -131,7 +130,7 @@ class _CreateAccountState extends State<CreateAccount> {
                           // SIGNUP BUTTONS HERE
                           ConstrainedBox(
                             constraints: const BoxConstraints(
-                                minWidth: 354.00, minHeight: 60.0),
+                                minWidth: 354.00, minHeight: 50.0),
                             child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: authsBackColor,
