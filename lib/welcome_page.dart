@@ -6,11 +6,17 @@ import 'package:flutter/material.dart';
 
 import 'drawer_page.dart';
 
+const bottomAppBarColor = Color(0xFFF6F6F9);
 Color colGrey = const Color(0xFFFEFFFE);
 
-class WelcomePage extends StatelessWidget {
-  WelcomePage({super.key});
+class WelcomePage extends StatefulWidget {
+  const WelcomePage({super.key});
 
+  @override
+  State<WelcomePage> createState() => _WelcomePageState();
+}
+
+class _WelcomePageState extends State<WelcomePage> {
   final List<String> images = [
     'assets/images/card3.png',
     'assets/images/card_img.png',
@@ -19,6 +25,15 @@ class WelcomePage extends StatelessWidget {
     'assets/images/card3.png',
     'assets/images/card2.png',
   ];
+
+  void _openIconButton() {
+    showModalBottomSheet(
+        isScrollControlled: true,
+        showDragHandle: true,
+        context: context, 
+        builder: (ctx) => AssetPage());
+        print('_openIconButton');
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -134,8 +149,7 @@ class WelcomePage extends StatelessWidget {
 
               // CARDS AREA HERE
               Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 8.0, vertical: 18),
+                padding: const EdgeInsets.symmetric(vertical: 12),
                 child: SizedBox(
                   height: 120, // Set a fixed height for the horizontal list
                   child: ListView.builder(
@@ -144,17 +158,13 @@ class WelcomePage extends StatelessWidget {
                       return Card(
                         // color: Colors.blue[100 * (index % 9 + 1)],
                         child: SizedBox(
-                          // width: 100,
-                          // height: 120,
+                          width: 100,
+                          height: 120,
                           child: Center(
                             child: InkWell(
                                 onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => const AssetPage(),
-                                    ),
-                                  );
+                                  _openIconButton();
+                                  print('bottom');
                                 },
                                 child: Image.asset(
                                   images[index % images.length],
@@ -166,8 +176,78 @@ class WelcomePage extends StatelessWidget {
                   ),
                 ),
               ),
-
               // CARDS AREA ENDS HERE
+
+              // FOOTER SECTIONS HERE
+              const Text(
+                'Investment Guide',
+                style: TextStyle(
+                  fontWeight: FontWeight.w800,
+                  fontSize: 15,
+                ),
+              ),
+              // FOOTER SECTIONS ENDS HERE
+            ],
+          ),
+        ),
+
+        // BOTTOM NAVIGATION BAR
+        bottomNavigationBar: const BottomAppBar(
+          color: bottomAppBarColor,
+          height: 69,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                children: [
+                  Icon(
+                    Icons.home,
+                    color: authsColor,
+                    size: 25,
+                  ),
+                  Text(
+                    'Home',
+                    style: TextStyle(
+                        fontSize: 12, fontFamily: 'Sans', color: authsColor),
+                  )
+                ],
+              ),
+              Column(
+                children: [
+                  Icon(
+                    Icons.search,
+                    size: 25,
+                  ),
+                  Text(
+                    'Search',
+                    style: TextStyle(fontSize: 12, fontFamily: 'Sans'),
+                  )
+                ],
+              ),
+              Column(
+                children: [
+                  Icon(
+                    Icons.attach_money,
+                    size: 25,
+                  ),
+                  Text(
+                    'Transactions',
+                    style: TextStyle(fontSize: 12, fontFamily: 'Sans'),
+                  )
+                ],
+              ),
+              Column(
+                children: [
+                  Icon(
+                    Icons.person_3_outlined,
+                    size: 25,
+                  ),
+                  Text(
+                    'Account',
+                    style: TextStyle(fontSize: 12, fontFamily: 'Sans'),
+                  )
+                ],
+              ),
             ],
           ),
         ),
