@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 Color authsBackColor = const Color(0xFF31A062);
 Color authsFillColor = const Color(0xFFFFFFFF);
+Color txtColor = const Color(0xFFB3B3B3);
 
 class CreateAccount extends StatefulWidget {
   const CreateAccount({super.key});

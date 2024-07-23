@@ -32,7 +32,6 @@ class _WelcomePageState extends State<WelcomePage> {
         showDragHandle: true,
         context: context, 
         builder: (ctx) => AssetPage());
-        print('_openIconButton');
   }
 
   @override
@@ -186,6 +185,21 @@ class _WelcomePageState extends State<WelcomePage> {
                   fontSize: 15,
                 ),
               ),
+
+              SizedBox(
+                height: 106,
+                child: ListView.builder(
+                  itemCount: 10,
+                  itemBuilder: (context, index) {
+                    return  ListTile(
+                      tileColor: colGrey,
+                        contentPadding: EdgeInsets.zero,
+                        title: Text('Item $index'),
+                      );
+                    
+                  },
+                ),
+              ),
               // FOOTER SECTIONS ENDS HERE
             ],
           ),
@@ -194,7 +208,7 @@ class _WelcomePageState extends State<WelcomePage> {
         // BOTTOM NAVIGATION BAR
         bottomNavigationBar: const BottomAppBar(
           color: bottomAppBarColor,
-          height: 69,
+          height: 60,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -203,12 +217,12 @@ class _WelcomePageState extends State<WelcomePage> {
                   Icon(
                     Icons.home,
                     color: authsColor,
-                    size: 25,
+                    size: 20,
                   ),
                   Text(
                     'Home',
                     style: TextStyle(
-                        fontSize: 12, fontFamily: 'Sans', color: authsColor),
+                        fontSize: 10, fontFamily: 'Sans', color: authsColor),
                   )
                 ],
               ),
@@ -216,11 +230,11 @@ class _WelcomePageState extends State<WelcomePage> {
                 children: [
                   Icon(
                     Icons.search,
-                    size: 25,
+                    size: 20,
                   ),
                   Text(
                     'Search',
-                    style: TextStyle(fontSize: 12, fontFamily: 'Sans'),
+                    style: TextStyle(fontSize: 10, fontFamily: 'Sans'),
                   )
                 ],
               ),
@@ -228,11 +242,11 @@ class _WelcomePageState extends State<WelcomePage> {
                 children: [
                   Icon(
                     Icons.attach_money,
-                    size: 25,
+                    size: 20,
                   ),
                   Text(
                     'Transactions',
-                    style: TextStyle(fontSize: 12, fontFamily: 'Sans'),
+                    style: TextStyle(fontSize: 10, fontFamily: 'Sans'),
                   )
                 ],
               ),
@@ -240,11 +254,11 @@ class _WelcomePageState extends State<WelcomePage> {
                 children: [
                   Icon(
                     Icons.person_3_outlined,
-                    size: 25,
+                    size: 20,
                   ),
                   Text(
                     'Account',
-                    style: TextStyle(fontSize: 12, fontFamily: 'Sans'),
+                    style: TextStyle(fontSize: 10, fontFamily: 'Sans'),
                   )
                 ],
               ),
